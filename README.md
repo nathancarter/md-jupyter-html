@@ -9,6 +9,8 @@ I'd like such a UX for any Jupyter-supported language.
 
 This file solves that problem.
 
+![Animated GIF screencast](screencast.gif)
+
 # Requirements
 
 This tiny piece of work combines excellent tools made by tons
