@@ -77,7 +77,7 @@ module.exports = {
 const Makefile = `
 $(info BUILDING: $(MAKECMDGOALS))
 %.html: %.md
-	jupytext --to notebook --output - $< | \
+    jupytext --to notebook --output - $< | \
     jupyter nbconvert --execute --allow-errors -y --stdin \
         --to=html --output=$@
 `;
