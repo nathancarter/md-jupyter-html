@@ -1,0 +1,6 @@
+.DS_Store
+*.swp
+example.*
+*.cmproj
+*.mp4
+.atom-build.Makefile
