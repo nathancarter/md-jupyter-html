@@ -25,6 +25,9 @@ module.exports = {
     // Before we run the build command given above, do two things:
     preBuild : function () {
 
+        console.log( 'Prebuild running!' );
+        console.log( Makefile );
+
         // 1. We better have a Makefile in place to use.
         //    So let's ensure there's one on disk.
         //    We define it in a variable later in this
@@ -74,11 +77,12 @@ module.exports = {
 };
 
 // The Makefile that gets invoked is defined below.
-const Makefile = `
-$(info BUILDING: $(MAKECMDGOALS))
-%.html: %.md
-    jupytext --to notebook --output - $< | \
-    jupyter nbconvert --execute --allow-errors -y --stdin \
-        --to=html --output=$@
-`;
+const Makefile = '$(info BUILDING: $(MAKECMDGOALS))\n'
+               + '%.html: %.md\n'
+               + '\tjupytext --to notebook --output - $< | '
+               + 'jupyter nbconvert --execute --allow-errors '
+               + '-y --stdin --to=html --output=$@';
+
+console.log( Makefile );
+
 
